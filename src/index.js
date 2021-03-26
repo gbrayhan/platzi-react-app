@@ -8,12 +8,6 @@ import App from './component/App'
   const container = document.getElementById('root');
 
 ReactDOM.render(
-  // <Badge
-  //   firstName="Brayhan"
-  //   lastName="Gabriel"
-  //   jobTitle="Software Engineer"
-  //   twitter="@gbrayhan"
-  // />,
   <App/>,
   container
 );

@@ -2,7 +2,6 @@ import React from 'react';
 
 import './styles/Badges.css';
 import confLogo from '../img/badge-header.svg';
-import Navbar from '../component/Navbar';
 import BadgesList from '../component/BadgesList';
 import {Link} from "react-router-dom";
 
@@ -44,9 +43,7 @@ class Badges extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
-
+      <>
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
@@ -66,9 +63,9 @@ class Badges extends React.Component {
             </Link>
           </div>
 
-          <BadgesList badges={this.state.data} />
+          <BadgesList badges={this.state.data}/>
         </div>
-      </div>
+      </>
     );
   }
 }
