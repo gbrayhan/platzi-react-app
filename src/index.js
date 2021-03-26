@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import "bootstrap/dist/css/bootstrap.css"
 
 import './global.css'
-import Badges from './pages/Badges';
+import App from './component/App'
 
   const container = document.getElementById('root');
 
@@ -14,6 +14,6 @@ ReactDOM.render(
   //   jobTitle="Software Engineer"
   //   twitter="@gbrayhan"
   // />,
-  <Badges/>,
+  <App/>,
   container
 );
