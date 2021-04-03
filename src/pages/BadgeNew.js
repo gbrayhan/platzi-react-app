@@ -48,9 +48,7 @@ class BadgeNew extends React.Component {
               <BadgeForm pOnChange={this.handleChange} formData={this.state.form}/>
             </div>
           </div>
-
         </div>
-
       </>
     )
   }
