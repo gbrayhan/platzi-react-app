@@ -5,6 +5,8 @@ import confLogo from '../img/badge-header.svg';
 import BadgesList from '../component/BadgesList';
 import {Link} from "react-router-dom";
 import api from "../api";
+import ResourceLoading from "../component/ResourceLoading";
+import ResourceError from "../component/ResourceError";
 
 class Badges extends React.Component {
   state = {
@@ -31,11 +33,17 @@ class Badges extends React.Component {
 
   render() {
     if (this.state.loading === true) {
-      return 'Loading...';
+      return (
+        <ResourceLoading/>
+      );
     }
 
     if (this.state.error) {
-      return `Error: ${this.state.error.message}`;
+      return (
+        <ResourceError error={this.state.error} />
+      );
+
+      // return `Error: ${this.state.error.message}`;
     }
     return (
       <>
