@@ -40,7 +40,7 @@ class Badges extends React.Component {
 
     if (this.state.error) {
       return (
-        <ResourceError error={this.state.error} />
+        <ResourceError error={this.state.error}/>
       );
 
       // return `Error: ${this.state.error.message}`;

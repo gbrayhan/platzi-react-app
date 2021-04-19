@@ -5,16 +5,11 @@ class BadgeForm extends React.Component {
   state = {form: {}};
 
 
-  handleClick = event => {
-    console.log(this.state)
-  }
-
   render() {
     return (
       <div>
         <h1>New Attendant</h1>
-
-        <form action="">
+        <form>
           <div className="form-group">
             <label htmlFor="">First Name</label>
             <input onChange={this.props.pOnChange} value={this.props.formData.firstName} className="form-control"
@@ -34,6 +29,12 @@ class BadgeForm extends React.Component {
                    name="jobPosition"/>
           </div>
           <div className="form-group">
+            <label htmlFor="">Email</label>
+            <input onChange={this.props.pOnChange} value={this.props.formData.email} className="form-control"
+                   type="text"
+                   name="email"/>
+          </div>
+          <div className="form-group">
             <label htmlFor="">Twitter</label>
             <input onChange={this.props.pOnChange} value={this.props.formData.twitter} className="form-control"
                    type="text"
@@ -41,14 +42,13 @@ class BadgeForm extends React.Component {
           </div>
 
           <div className="form-group">
-            <button onClick={this.handleClick} className="btn btn-primary" type="button">cick me</button>
+            <button className="btn btn-primary" onClick={this.props.pOnSubmit} type="button">cick me</button>
           </div>
 
         </form>
       </div>
     )
   }
-
 }
 
 

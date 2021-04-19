@@ -6,29 +6,40 @@ import BadgeForm from '../component/BadgeForm'
 
 import header from '../img/logowz.png'
 import '../component/styles/badgenew.css'
+import api from '../api'
 
 
 class BadgeNew extends React.Component {
   state = {
     form: {
+      email: "",
       firstName: "",
       lastName: "",
       jobPosition: "",
       twitter: "",
-      avatarUrl: "",
     }
   }
 
   handleChange = event => {
-
     this.setState({
       form: {
         ...this.state.form,
         [event.target.name]: event.target.value
       }
     })
-
   }
+
+  handleSubmit = async (event) => {
+    event.preventDefault()
+    this.setState({loading: true, error: null})
+
+    try {
+      await api.badges.create(this.state.form)
+    } catch (error) {
+      this.setState({loading: false, error: error})
+    }
+  }
+
 
   render() {
     return (
@@ -40,12 +51,19 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                avatarUrl="https://es.gravatar.com/userimage/45863998/2d0d2bcab855c48cf85120328094e788.jpg?size=200"
-                firstName={this.state.form.firstName} lastName={this.state.form.lastName}
-                jobPosition={this.state.form.jobPosition} twitter={this.state.form.twitter}></Badge>
+                firstName={this.state.form.firstName || 'FIRST_NAME'}
+                lastName={this.state.form.lastName || 'LAST_NAME'}
+                jobPosition={this.state.form.jobPosition || 'JOB_POSITION'}
+                twitter={this.state.form.twitter || 'TWITTER'}
+                email={this.state.form.email || 'EMAIL'}
+              />
             </div>
             <div className="col-6">
-              <BadgeForm pOnChange={this.handleChange} formData={this.state.form}/>
+              <BadgeForm
+                pOnSubmit={this.handleSubmit}
+                pOnChange={this.handleChange}
+                formData={this.state.form}
+              />
             </div>
           </div>
         </div>
