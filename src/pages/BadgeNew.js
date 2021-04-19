@@ -1,9 +1,6 @@
 import React from 'react'
-
 import Badge from '../component/Badge'
 import BadgeForm from '../component/BadgeForm'
-
-
 import header from '../img/logowz.png'
 import '../component/styles/badgenew.css'
 import api from '../api'
@@ -17,6 +14,7 @@ class BadgeNew extends React.Component {
       lastName: "",
       jobPosition: "",
       twitter: "",
+      avatarUrl: "",
     }
   }
 
@@ -35,6 +33,9 @@ class BadgeNew extends React.Component {
 
     try {
       await api.badges.create(this.state.form)
+      this.setState({loading: false})
+
+      this.props.history.push('/badges')
     } catch (error) {
       this.setState({loading: false, error: error})
     }

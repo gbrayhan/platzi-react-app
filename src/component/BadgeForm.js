@@ -44,7 +44,6 @@ class BadgeForm extends React.Component {
           <div className="form-group">
             <button className="btn btn-primary" onClick={this.props.pOnSubmit} type="button">cick me</button>
           </div>
-
         </form>
       </div>
     )

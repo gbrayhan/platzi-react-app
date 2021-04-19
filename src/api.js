@@ -1,3 +1,5 @@
+import md5 from 'md5';
+
 const BASE_URL = 'http://localhost:3001';
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -27,6 +29,10 @@ const api = {
       return callApi('/badges');
     },
     create(badge) {
+      badge = {
+        ...badge,
+        avatarUrl: `https://www.gravatar.com/avatar/${md5(badge.email)}?d=identicon`
+      }
       return callApi(`/badges`, {
         method: 'POST',
         body: JSON.stringify(badge),

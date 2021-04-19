@@ -44,7 +44,33 @@
       "jobTitle": "Dynamic Tactics Liaison",
       "twitter": "KellyCorkery06275-3676",
       "avatarUrl": "https://www.gravatar.com/avatar/00e35de53a06a655fe5b6ac8b96bdb84?d=identicon"
+    },
+    {
+      "email": "gbrayhan@gmail.com",
+      "firstName": "Alejandro",
+      "lastName": "Guerrero",
+      "jobPosition": "Golang Engineer",
+      "twitter": "Brayhan_7",
+      "avatarUrl": "https://www.gravatar.com/avatar/00e35de53a06a655fe5b6ac8b96bdb84?d=identicon",
+      "id": "1LKr0t5"
+    },
+    {
+      "email": "gbrayhan@gmail.com",
+      "firstName": "Brayhan ",
+      "lastName": "Gabriel",
+      "jobPosition": "SE",
+      "twitter": "Brayhan_7",
+      "avatarUrl": "https://www.gravatar.com/avatar/97811b00f41c2e5294dccbb5f10205b6?d=identicon",
+      "id": "6QhM7PR"
+    },
+    {
+      "email": "dannegm@gmail.com",
+      "firstName": "Daniel",
+      "lastName": "Garcia",
+      "jobPosition": "SE",
+      "twitter": "@dannegm",
+      "avatarUrl": "https://www.gravatar.com/avatar/a52e0f69448baa12b6a6bb86759abb49?d=identicon",
+      "id": "2HaV_tQ"
     }
-
   ]
 }
