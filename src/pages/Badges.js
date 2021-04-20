@@ -16,13 +16,16 @@ class Badges extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchData().then(r => {
-    });
+    this.fetchData()
+    this.intervalID = setInterval(this.fetchData, 4000)
+  }
+
+  componentWillMount() {
+    clearInterval(this.intervalID)
   }
 
   fetchData = async () => {
     this.setState({loading: true, error: null});
-
     try {
       const data = await api.badges.list();
       this.setState({loading: false, data: data});
@@ -32,7 +35,7 @@ class Badges extends React.Component {
   };
 
   render() {
-    if (this.state.loading === true) {
+    if (this.state.loading === true && !this.state.data) {
       return (
         <ResourceLoading/>
       );
@@ -42,9 +45,8 @@ class Badges extends React.Component {
       return (
         <ResourceError error={this.state.error}/>
       );
-
-      // return `Error: ${this.state.error.message}`;
     }
+
     return (
       <>
         <div className="Badges">
