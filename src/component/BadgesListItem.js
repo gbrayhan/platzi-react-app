@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import './styles/BadgesList.css';
+import "./styles/BadgesList.css";
 
 class BadgesListItem extends React.Component {
   render() {
@@ -16,8 +16,8 @@ class BadgesListItem extends React.Component {
           <strong>
             {this.props.badge.firstName} {this.props.badge.lastName}
           </strong>
-          <br/>@{this.props.badge.twitter}
-          <br/>
+          <br />@{this.props.badge.twitter}
+          <br />
           {this.props.badge.jobTitle}
         </div>
       </div>

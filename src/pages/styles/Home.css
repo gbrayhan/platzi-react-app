@@ -1,36 +1,35 @@
 .Home {
-    width: 100%;
-    min-height: calc(100vh - 60px);
-    background: url('../../img/stars.svg'), #1B1B25;
-    background-repeat: repeat;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  background: url("../../img/stars.svg"), #1b1b25;
+  background-repeat: repeat;
 
-    color: #ffffff;
+  color: #ffffff;
 
-    display: grid;
-    grid-template: 1fr / 100px 300px 1fr 100px;
-    grid-template-areas: ". text image .";
-    align-items: center;
-    justify-items: center;
+  display: grid;
+  grid-template: 1fr / 100px 300px 1fr 100px;
+  grid-template-areas: ". text image .";
+  align-items: center;
+  justify-items: center;
 }
 
-
-.BadgeHome__image-logo{
-   max-height: 15rem;
+.BadgeHome__image-logo {
+  max-height: 15rem;
 }
 
-.col-img{
-    grid-area: image;
-    max-height: 15rem;
+.col-img {
+  grid-area: image;
+  max-height: 15rem;
 }
 
-.col-img img{
-    width: 100%;
+.col-img img {
+  width: 100%;
 }
 
-.col-text{
-    grid-area: text
+.col-text {
+  grid-area: text;
 }
 
-.col-text img{
-    margin-bottom: 20px;
+.col-text img {
+  margin-bottom: 20px;
 }

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import './styles/Badges.css';
-import confLogo from '../img/badge-header.svg';
-import BadgesList from '../component/BadgesList';
-import {Link} from "react-router-dom";
+import "./styles/Badges.css";
+import confLogo from "../img/badge-header.svg";
+import BadgesList from "../component/BadgesList";
+import { Link } from "react-router-dom";
 import api from "../api";
 import ResourceLoading from "../component/ResourceLoading";
 import ResourceError from "../component/ResourceError";
@@ -16,35 +16,31 @@ class Badges extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchData()
-    this.intervalID = setInterval(this.fetchData, 4000)
+    this.fetchData();
+    this.intervalID = setInterval(this.fetchData, 4000);
   }
 
   componentWillMount() {
-    clearInterval(this.intervalID)
+    clearInterval(this.intervalID);
   }
 
   fetchData = async () => {
-    this.setState({loading: true, error: null});
+    this.setState({ loading: true, error: null });
     try {
       const data = await api.badges.list();
-      this.setState({loading: false, data: data});
+      this.setState({ loading: false, data: data });
     } catch (error) {
-      this.setState({loading: false, error: error});
+      this.setState({ loading: false, error: error });
     }
   };
 
   render() {
     if (this.state.loading === true && !this.state.data) {
-      return (
-        <ResourceLoading/>
-      );
+      return <ResourceLoading />;
     }
 
     if (this.state.error) {
-      return (
-        <ResourceError error={this.state.error}/>
-      );
+      return <ResourceError error={this.state.error} />;
     }
 
     return (
@@ -68,7 +64,7 @@ class Badges extends React.Component {
             </Link>
           </div>
 
-          <BadgesList badges={this.state.data}/>
+          <BadgesList badges={this.state.data} />
         </div>
       </>
     );
